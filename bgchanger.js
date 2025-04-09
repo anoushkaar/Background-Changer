@@ -1,3 +1,7 @@
+document.getElementById("orange").addEventListener("click", function () {
+  document.body.style.backgroundColor = "orange";
+});
+
 document.getElementById("green").addEventListener("click", function () {
   document.body.style.backgroundColor = "green";
 });
