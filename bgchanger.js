@@ -17,3 +17,7 @@ document.getElementById("yellow").addEventListener("click", function () {
 document.getElementById("purple").addEventListener("click", function () {
   document.body.style.backgroundColor = "purple";
 });
+
+document.getElementById("black").addEventListener("click", function () {
+  document.body.style.backgroundColor = "black";
+});
