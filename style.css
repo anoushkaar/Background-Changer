@@ -1,0 +1,41 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+body {
+  background: whitesmoke;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.main {
+  background-color: rgb(222, 245, 176);
+  width: 100%;
+  height: 100px;
+}
+
+#btnarea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  &:hover {
+    background-color: #7fae81;
+  }
+}
