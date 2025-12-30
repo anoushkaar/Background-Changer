@@ -21,3 +21,7 @@ document.getElementById("purple").addEventListener("click", function () {
 document.getElementById("black").addEventListener("click", function () {
   document.body.style.backgroundColor = "black";
 });
+
+document.getElementById("pink").addEventListener("click", function(){
+  document.body.style.backgroundColor="pink";
+});
