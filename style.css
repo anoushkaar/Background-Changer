@@ -63,7 +63,7 @@ h1 {
 }
 
 .main {
-  background: linear-gradient(135deg, rgba(222, 245, 176, 0.95), rgba(200, 230, 150, 0.95));
+  background: #eef5e3;
   width: 100%;
   max-width: 1200px;
   padding: 30px;
@@ -116,23 +116,14 @@ button {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-.gradient-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.gradient-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-}
-
 .special-btn {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: #f0787a;
   font-size: 17px;
 }
 
 .special-btn:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
+  box-shadow: 0 6px 20px rgba(240, 120, 122, 0.4);
 }
 
 .color-picker-wrapper {

@@ -13,14 +13,6 @@ function setSolidColor(color) {
   updateColorDisplay(color);
 }
 
-// Function to set gradient
-function setGradient(gradient) {
-  document.body.style.background = gradient;
-  document.body.style.backgroundColor = "";
-  updateColorDisplay("Gradient");
-  localStorage.setItem("lastColor", gradient);
-}
-
 // Solid color buttons
 const colors = {
   orange: "orange",
@@ -35,20 +27,6 @@ const colors = {
 for (const [id, color] of Object.entries(colors)) {
   document.getElementById(id).addEventListener("click", function () {
     setSolidColor(color);
-  });
-}
-
-// Gradient buttons
-const gradients = {
-  gradient1: "linear-gradient(135deg, #ff6b6b 0%, #ffd93d 50%, #ff6b6b 100%)", // Sunset
-  gradient2: "linear-gradient(135deg, #667eea 0%, #764ba2 50%, #00d2ff 100%)", // Ocean
-  gradient3: "linear-gradient(135deg, #56ab2f 0%, #a8e063 50%, #2f8f21 100%)", // Forest
-  gradient4: "linear-gradient(135deg, #43e97b 0%, #38f9d7 50%, #b721ff 100%)"  // Aurora
-};
-
-for (const [id, gradient] of Object.entries(gradients)) {
-  document.getElementById(id).addEventListener("click", function () {
-    setGradient(gradient);
   });
 }
 
@@ -71,12 +49,11 @@ document.getElementById("reset").addEventListener("click", function () {
 // Load last color from localStorage on page load
 window.addEventListener("load", function () {
   const lastColor = localStorage.getItem("lastColor");
-  if (lastColor) {
-    if (lastColor.includes("gradient")) {
-      setGradient(lastColor);
-    } else {
-      setSolidColor(lastColor);
-    }
+  const fallbackColor = "whitesmoke";
+  if (lastColor && !lastColor.includes("gradient")) {
+    setSolidColor(lastColor);
+  } else {
+    setSolidColor(fallbackColor);
   }
 });
 
