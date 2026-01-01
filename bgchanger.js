@@ -21,7 +21,8 @@ const colors = {
   yellow: "yellow",
   purple: "purple",
   black: "black",
-  pink: "pink"
+  pink: "pink",
+  gray: "gray"
 };
 
 for (const [id, color] of Object.entries(colors)) {
