@@ -1,16 +1,9 @@
-// Function to update color display
-function updateColorDisplay(color) {
-  const display = document.getElementById("colorDisplay");
-  display.textContent = `Current Color: ${color}`;
-  // Save to localStorage
-  localStorage.setItem("lastColor", color);
-}
-
 // Function to set solid color
 function setSolidColor(color) {
-  document.body.style.background = color;
   document.body.style.backgroundColor = color;
-  updateColorDisplay(color);
+  document.getElementById(
+    "currentColor"
+  ).textContent = `Current Color: ${color}`;
 }
 
 // Solid color buttons
@@ -22,7 +15,7 @@ const colors = {
   purple: "purple",
   black: "black",
   pink: "pink",
-  gray: "gray"
+  gray: "gray",
 };
 
 for (const [id, color] of Object.entries(colors)) {
@@ -33,36 +26,18 @@ for (const [id, color] of Object.entries(colors)) {
 
 // Random color button
 document.getElementById("random").addEventListener("click", function () {
-  const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')}`;
+  const randomColor = `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, "0")}`;
   setSolidColor(randomColor);
+});
+
+// Reset button
+document.getElementById("reset").addEventListener("click", function () {
+  setSolidColor("white");
 });
 
 // Custom color picker
 document.getElementById("colorPicker").addEventListener("input", function (e) {
   setSolidColor(e.target.value);
-});
-
-// Reset button
-document.getElementById("reset").addEventListener("click", function () {
-  setSolidColor("whitesmoke");
-});
-
-// Load last color from localStorage on page load
-window.addEventListener("load", function () {
-  const lastColor = localStorage.getItem("lastColor");
-  const fallbackColor = "whitesmoke";
-  if (lastColor && !lastColor.includes("gradient")) {
-    setSolidColor(lastColor);
-  } else {
-    setSolidColor(fallbackColor);
-  }
-});
-
-// Keyboard shortcuts
-document.addEventListener("keydown", function (e) {
-  if (e.key === "r" || e.key === "R") {
-    document.getElementById("random").click();
-  } else if (e.key === "Escape") {
-    document.getElementById("reset").click();
-  }
 });
