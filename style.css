@@ -12,8 +12,17 @@ h1 {
 }
 
 #currentColor {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-weight: bold;
+}
+
+#copyColor {
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  background-color: #ddd;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 .buttons {
